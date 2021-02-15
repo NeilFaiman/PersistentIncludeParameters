@@ -122,4 +122,12 @@ class PersistentIncludeParametersTests: XCTestCase {
         XCTAssertEqual(String(describing:error), "The error")
         XCTAssertEqual("\(error)", "The error")
     }
+    
+    func testSimplifiedErrorReporting() {
+        XCTAssertNil(try? PersistentIncludeParameters(arguments: "foo"),
+                     "try? of failing initializer must return nil")
+        XCTAssertNotNil(try? PersistentIncludeParameters(arguments: "foo", "bar"),
+                        "try? of successful initializer must return non-nil")
+    }
+
 }
