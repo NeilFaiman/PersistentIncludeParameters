@@ -27,11 +27,11 @@ import Foundation
 /// comment. If the include file is an executable, then BBEdit runs it, passing
 /// the file path of the including HTML file as the first command line argument,
 /// and the parameter names and values as additional arguments. The standard
-/// output from the include file execution becomes the replacememt text.
+/// output from the include file execution becomes the replacement text.
 ///
-/// This `struct` provides a consistent way of accessing the parameters in
-/// a Swift script that is used as the `include file` of a persistent include.
-/// To use it, just declare one:
+/// The `PersistentIncludeParameters` struct provides a consistent
+/// way of accessing the parameters in a Swift script that is included by a
+/// persistent include. To use it, just create one:
 ///
 ///         let params = PersistentIncludeParameters()
 ///
@@ -39,7 +39,7 @@ import Foundation
 ///
 ///  - `params.script` is the path to the script file.
 ///  - `params.includer` is the path to the HTML file that contains the
-///     include directive.
+///     `bbinclude` directive.
 ///  - `params.count` is the number of `#name#="value"` pairs in the
 ///    include directive.
 ///  - If the include directive specified `#name#="value"`, then
