@@ -17,7 +17,7 @@ class PersistentIncludeParametersTests: XCTestCase {
             params = try PersistentIncludeParameters(arguments:
                 "scriptPath", "includerPath")
         } catch {
-            XCTFail("Unexpected error \(error) hrown from PersistentIncludeParameters initializer")
+            XCTFail("Unexpected error \(error) thrown from PersistentIncludeParameters initializer")
             return
         }
         XCTAssertEqual(params.script, "scriptPath")
@@ -32,7 +32,7 @@ class PersistentIncludeParametersTests: XCTestCase {
             params = try PersistentIncludeParameters(arguments:
                 "scriptPath", "includerPath", "FOO", "foobar")
         } catch {
-            XCTFail("Unexpected error \(error) hrown from PersistentIncludeParameters initializer")
+            XCTFail("Unexpected error \(error) thrown from PersistentIncludeParameters initializer")
             return
         }
         XCTAssertEqual(params.script, "scriptPath")
@@ -50,7 +50,7 @@ class PersistentIncludeParametersTests: XCTestCase {
                 "scriptPath", "includerPath", "FOO1", "BAR1",
                               "foo2", "bar2", "foo3", "bar3")
         } catch {
-            XCTFail("Unexpected error \(error) hrown from PersistentIncludeParameters initializer")
+            XCTFail("Unexpected error \(error) thrown from PersistentIncludeParameters initializer")
             return
         }
         XCTAssertEqual(params.script, "scriptPath")
@@ -72,7 +72,7 @@ class PersistentIncludeParametersTests: XCTestCase {
                            """)
             return
         } catch {
-            XCTFail("Unexpected error \(error) hrown from PersistentIncludeParameters initializer")
+            XCTFail("Unexpected error \(error) thrown from PersistentIncludeParameters initializer")
             return
         }
         do {
@@ -84,7 +84,7 @@ class PersistentIncludeParametersTests: XCTestCase {
                            """)
             return
         } catch {
-            XCTFail("Unexpected error \(error) hrown from PersistentIncludeParameters initializer")
+            XCTFail("Unexpected error \(error) thrown from PersistentIncludeParameters initializer")
             return
         }
     }
@@ -98,7 +98,7 @@ class PersistentIncludeParametersTests: XCTestCase {
                     "Argument array must contain matched name / value pairs")
             return
         } catch {
-            XCTFail("Unexpected error \(error) hrown from PersistentIncludeParameters initializer")
+            XCTFail("Unexpected error \(error) thrown from PersistentIncludeParameters initializer")
             return
         }
     }
@@ -112,7 +112,7 @@ class PersistentIncludeParametersTests: XCTestCase {
                     "Two parameters have the same name")
             return
         } catch {
-            XCTFail("Unexpected error \(error) hrown from PersistentIncludeParameters initializer")
+            XCTFail("Unexpected error \(error) thrown from PersistentIncludeParameters initializer")
             return
         }
     }
