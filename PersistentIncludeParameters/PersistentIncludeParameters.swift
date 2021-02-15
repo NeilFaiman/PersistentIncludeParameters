@@ -80,9 +80,11 @@ public struct PersistentIncludeParameters {
     
     /// Error type thrown if an initializer argument array doesn’t
     /// match the expected format.
-    public struct ArgumentsError : Error {
+    public struct ArgumentsError : Error, CustomStringConvertible {
         /// Description of the error.
         public let errorText: String
+        /// `CustomStringConvertible` conformance.
+        public var description: String { errorText }
     }
     
     /// Initialize from the commmand line arguments.

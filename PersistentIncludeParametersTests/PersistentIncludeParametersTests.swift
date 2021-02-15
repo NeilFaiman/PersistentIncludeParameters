@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import PersistentIncludeParameters
+@testable import PersistentIncludeParameters
 
 class PersistentIncludeParametersTests: XCTestCase {
 
@@ -116,5 +116,10 @@ class PersistentIncludeParametersTests: XCTestCase {
             return
         }
     }
-
+    
+    func testCustomStringConvertibleError() {
+        let error = PersistentIncludeParameters.ArgumentsError(errorText: "The error")
+        XCTAssertEqual(String(describing:error), "The error")
+        XCTAssertEqual("\(error)", "The error")
+    }
 }
