@@ -100,7 +100,7 @@ public struct PersistentIncludeParameters {
     ///
     /// - Throws: ArgumentsError
     ///
-    public init(arguments: [String]) throws {
+    init(arguments: [String]) throws {
         guard arguments.count >= 2 else {
             throw ArgumentsError(errorText: """
                 Argument array must contain the script and includer \
@@ -128,7 +128,7 @@ public struct PersistentIncludeParameters {
     ///
     /// - Throws: ArgumentsError
     ///
-    public init(arguments: String...) throws {
+    init(arguments: String...) throws {
         try self.init(arguments: arguments)
     }
 
