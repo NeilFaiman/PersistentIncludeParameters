@@ -12,7 +12,7 @@ import Foundation
 /// persistent include construct.
 ///
 /// BBEdit is the popular Mac text editor from
-/// [Barebones Software](www.barebnes.com).
+/// [Barebones Software](www.barebones.com).
 ///
 /// A “persistent include” in a BBEdit HTML file is a pair of comments:
 ///
