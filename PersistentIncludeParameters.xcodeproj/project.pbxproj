@@ -29,6 +29,7 @@
 		28A1906C24C2B1B800971F53 /* PersistentIncludeParametersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersistentIncludeParametersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28A1906E24C2B1B800971F53 /* PersistentIncludeParametersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentIncludeParametersTests.swift; sourceTree = "<group>"; };
 		28A1907024C2B1B800971F53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28FBE06325DACAF8000080D1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +74,7 @@
 			children = (
 				28A1905F24C2926800971F53 /* Info.plist */,
 				28A1906624C292A900971F53 /* PersistentIncludeParameters.swift */,
+				28FBE06325DACAF8000080D1 /* README.md */,
 			);
 			path = PersistentIncludeParameters;
 			sourceTree = "<group>";
