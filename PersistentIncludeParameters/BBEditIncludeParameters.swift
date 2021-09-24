@@ -45,7 +45,7 @@ import Foundation
 ///  - If the include directive specified `#name#="value"`, then
 ///       `params["name"]` returns `"value"`.
 ///
-public struct PersistentIncludeParameters {
+public struct BBEditIncludeParameters {
     
     /// The file path of the script.
     public let script : String

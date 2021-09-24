@@ -12,9 +12,9 @@ import XCTest
 class PersistentIncludeParametersTests: XCTestCase {
 
     func testNoParameters() {
-        let params: PersistentIncludeParameters
+        let params: BBEditIncludeParameters
         do {
-            params = try PersistentIncludeParameters(arguments:
+            params = try BBEditIncludeParameters(arguments:
                 "scriptPath", "includerPath")
         } catch {
             XCTFail("Unexpected error \(error) thrown from PersistentIncludeParameters initializer")
@@ -27,9 +27,9 @@ class PersistentIncludeParametersTests: XCTestCase {
     }
     
     func testOneParameter() {
-        let params: PersistentIncludeParameters
+        let params: BBEditIncludeParameters
         do {
-            params = try PersistentIncludeParameters(arguments:
+            params = try BBEditIncludeParameters(arguments:
                 "scriptPath", "includerPath", "FOO", "foobar")
         } catch {
             XCTFail("Unexpected error \(error) thrown from PersistentIncludeParameters initializer")
@@ -44,9 +44,9 @@ class PersistentIncludeParametersTests: XCTestCase {
     }
 
     func testThreeParameters() {
-        let params: PersistentIncludeParameters
+        let params: BBEditIncludeParameters
         do {
-            params = try PersistentIncludeParameters(arguments:
+            params = try BBEditIncludeParameters(arguments:
                 "scriptPath", "includerPath", "FOO1", "BAR1",
                               "foo2", "bar2", "foo3", "bar3")
         } catch {
@@ -63,9 +63,9 @@ class PersistentIncludeParametersTests: XCTestCase {
     
     func testTooFewArguments() {
         do {
-            let _ = try PersistentIncludeParameters(arguments:
+            let _ = try BBEditIncludeParameters(arguments:
                 [])
-        } catch let error as PersistentIncludeParameters.ArgumentsError {
+        } catch let error as BBEditIncludeParameters.ArgumentsError {
             XCTAssertEqual(error.errorText, """
                            Argument array must contain the script and includer \
                            file paths
@@ -76,8 +76,8 @@ class PersistentIncludeParametersTests: XCTestCase {
             return
         }
         do {
-            let _ = try PersistentIncludeParameters(arguments: "scriptPath")
-        } catch let error as PersistentIncludeParameters.ArgumentsError {
+            let _ = try BBEditIncludeParameters(arguments: "scriptPath")
+        } catch let error as BBEditIncludeParameters.ArgumentsError {
             XCTAssertEqual(error.errorText, """
                            Argument array must contain the script and includer \
                            file paths
@@ -91,9 +91,9 @@ class PersistentIncludeParametersTests: XCTestCase {
     
     func testOddArgumentCount() {
         do {
-            let _ = try PersistentIncludeParameters(arguments:
+            let _ = try BBEditIncludeParameters(arguments:
                 "scriptPath", "includerPath", "FOO")
-        } catch let error as PersistentIncludeParameters.ArgumentsError {
+        } catch let error as BBEditIncludeParameters.ArgumentsError {
             XCTAssertEqual(error.errorText,
                     "Argument array must contain matched name / value pairs")
             return
@@ -105,9 +105,9 @@ class PersistentIncludeParametersTests: XCTestCase {
 
     func testDuplicateParameter() {
         do {
-            let _ = try PersistentIncludeParameters(arguments:
+            let _ = try BBEditIncludeParameters(arguments:
                 "scriptPath", "includerPath", "FOO", "bar", "foo", "baz")
-        } catch let error as PersistentIncludeParameters.ArgumentsError {
+        } catch let error as BBEditIncludeParameters.ArgumentsError {
             XCTAssertEqual(error.errorText,
                     "Two parameters have the same name")
             return
@@ -118,15 +118,15 @@ class PersistentIncludeParametersTests: XCTestCase {
     }
     
     func testCustomStringConvertibleError() {
-        let error = PersistentIncludeParameters.ArgumentsError(errorText: "The error")
+        let error = BBEditIncludeParameters.ArgumentsError(errorText: "The error")
         XCTAssertEqual(String(describing:error), "The error")
         XCTAssertEqual("\(error)", "The error")
     }
     
     func testSimplifiedErrorReporting() {
-        XCTAssertNil(try? PersistentIncludeParameters(arguments: "foo"),
+        XCTAssertNil(try? BBEditIncludeParameters(arguments: "foo"),
                      "try? of failing initializer must return nil")
-        guard let _ = try? PersistentIncludeParameters(arguments: "foo", "bar") else {
+        guard let _ = try? BBEditIncludeParameters(arguments: "foo", "bar") else {
             XCTFail("try? of successful initializer must return non-nil")
             return
         }
